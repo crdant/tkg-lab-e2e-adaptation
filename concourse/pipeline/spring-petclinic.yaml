@@ -8,7 +8,7 @@ resources:
   type: git
   source:
     uri: ((petclinic.configRepo))
-    branch: master
+    branch: main
     paths:
      - "k8s/**"
 - name: spring-petclinic-image
@@ -62,7 +62,6 @@ jobs:
           type: docker-image
           source:
             repository: ((common-secrets.concourseHelperImage))
-            tag: latest
         inputs:
           - name: target
         run:
